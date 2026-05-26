@@ -22,6 +22,7 @@ import {
   type OpenDialogOptions,
   type SaveDialogOptions
 } from 'electron';
+import { installExtension, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 
 import { version, appPreferences } from '../../package.json';
 import noraAppIcon from '../../resources/logo_light_mode.png?asset';
@@ -148,8 +149,6 @@ function launchExtensionBackgroundWorkers(session = electronSession.defaultSessi
 
 const installExtensions = async () => {
   try {
-    const { default: installExtension, REACT_DEVELOPER_TOOLS } =
-      await import('electron-devtools-installer');
     const forceDownload = !!process.env.UPGRADE_EXTENSIONS;
 
     const ext = await installExtension(REACT_DEVELOPER_TOOLS, {
@@ -236,7 +235,7 @@ const createWindow = async () => {
     frame: false,
     backgroundColor: await getBackgroundColor(),
     icon: appIcon,
-    titleBarStyle: 'hidden',
+    titleBarStyle: process.platform === 'darwin' ? 'hiddenInset' : 'hidden',
     show: false
   });
 
@@ -271,7 +270,8 @@ protocol.registerSchemesAsPrivileged([
       standard: true,
       secure: true,
       supportFetchAPI: true,
-      stream: true
+      stream: true,
+      corsEnabled: true
     }
   }
 ]);
