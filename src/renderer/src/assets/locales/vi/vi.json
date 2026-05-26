@@ -149,6 +149,8 @@
     "zToA": "Z đến A",
     "dateAddedAscending": "Mới nhất",
     "dateAddedDescending": "Cũ nhất",
+    "dateModifiedAscending": "Ngày sửa đổi (Cũ nhất)",
+    "dateModifiedDescending": "Ngày sửa đổi (Mới nhất)",
     "releasedYearAscending": "Năm phát hành (Tăng dần)",
     "releasedYearDescending": "Năm phát hành (Giảm dần)",
     "allTimeMostListened": "Nghe nhiều nhất (Từ trước đến nay)",

@@ -149,6 +149,8 @@
     "zToA": "Z do A",
     "dateAddedAscending": "Najstarsze",
     "dateAddedDescending": "Najnowsze",
+    "dateModifiedAscending": "Data modyfikacji (Najstarsze)",
+    "dateModifiedDescending": "Data modyfikacji (Najnowsze)",
     "releasedYearAscending": "Rok wydania (Rosnąco)",
     "releasedYearDescending": "Rok wydania (Malejąco)",
     "allTimeMostListened": "Najczęściej słuchane (Cały okres)",

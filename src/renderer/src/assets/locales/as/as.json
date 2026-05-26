@@ -149,6 +149,8 @@
     "zToA": "Z ৰ পৰা A",
     "dateAddedAscending": "নতুন",
     "dateAddedDescending": "পুৰণি",
+    "dateModifiedAscending": "পৰিৱৰ্তনৰ তাৰিখ (পুৰণি)",
+    "dateModifiedDescending": "পৰিৱৰ্তনৰ তাৰিখ (নতুন)",
     "releasedYearAscending": "মুক্তিৰ বছৰ (ঊৰ্ধ্বক্ৰম)",
     "releasedYearDescending": "মুক্তিৰ বছৰ (অধঃক্ৰম)",
     "allTimeMostListened": "সৰ্বাধিক শুনা (সকলো সময়)",
