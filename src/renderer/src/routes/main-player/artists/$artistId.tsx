@@ -21,7 +21,8 @@ import calculateTimeFromSeconds from '@renderer/utils/calculateTimeFromSeconds';
 import { useSuspenseQuery, useMutation, useQuery } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router';
 import { useStore } from '@tanstack/react-store';
-import { useCallback, useContext, useMemo, useRef, useState } from 'react';
+import { useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import storage from '@renderer/utils/localStorage';
 import { useTranslation } from 'react-i18next';
 
 export const Route = createFileRoute('/main-player/artists/$artistId')({
@@ -46,7 +47,7 @@ function ArtistInfoPage() {
   const multipleSelectionsData = useStore(store, (state) => state.multipleSelectionsData);
   const preferences = useStore(store, (state) => state.localStorage.preferences);
 
-  const { createQueue, updateContextMenuData, toggleMultipleSelections, playSong } =
+  const { createQueue, updateContextMenuData, toggleMultipleSelections, playSong, updateBodyBackgroundImage } =
     useContext(AppUpdateContext);
   const { t } = useTranslation();
 
@@ -201,6 +202,27 @@ function ArtistInfoPage() {
         .timeString,
     [songs]
   );
+
+  useEffect(() => {
+    const artworkUrl =
+      artistData?.onlineArtworkPaths?.picture_xl ||
+      artistData?.onlineArtworkPaths?.picture_medium ||
+      artistData?.artworkPaths?.artworkPath;
+    const isBackgroundArtworksDisabled = storage.preferences.getPreferences(
+      'disableBackgroundArtworks'
+    );
+
+    if (!isBackgroundArtworksDisabled) {
+      updateBodyBackgroundImage(true, artworkUrl);
+    }
+
+    return () => updateBodyBackgroundImage(false);
+  }, [
+    artistData?.onlineArtworkPaths?.picture_xl,
+    artistData?.onlineArtworkPaths?.picture_medium,
+    artistData?.artworkPaths?.artworkPath,
+    updateBodyBackgroundImage
+  ]);
 
   const selectAllHandlerForAlbums = useSelectAllHandler(albums, 'album', 'albumId');
 
