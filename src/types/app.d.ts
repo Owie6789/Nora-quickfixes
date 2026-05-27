@@ -200,7 +200,7 @@ declare global {
 
   type RepeatTypes = 'false' | 'repeat' | 'repeat-1';
 
-  type PlayerTypes = 'normal' | 'mini' | 'full';
+  type PlayerTypes = 'normal' | 'mini' | 'full' | 'display';
 
   type PlayerVolume = { isMuted: boolean; value: number };
   interface Player {
@@ -513,6 +513,10 @@ declare global {
     enableImageBasedDynamicThemes: boolean;
     autoTranslateLyrics: boolean;
     autoConvertLyrics: boolean;
+    showSongTitleInDisplayMode: boolean;
+    showArtistNameInDisplayMode: boolean;
+    showControlsInDisplayMode: boolean;
+    displayModeIdleTimeout: number;
   }
 
   interface CurrentSong {
