@@ -622,6 +622,7 @@ declare global {
   }
 
   interface Shortcut {
+    id: string;
     label: string;
     keys: string[];
   }
