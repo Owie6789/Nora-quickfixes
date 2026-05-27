@@ -32,7 +32,9 @@ const playlistData: Playlist = {
   },
   songs: [],
   createdDate: new Date(),
-  isArtworkAvailable: true
+  isArtworkAvailable: true,
+  isSmart: false,
+  criteria: null
 };
 
 function HistoryPlaylistInfoPage() {
