@@ -532,6 +532,7 @@ declare global {
     currentSong: CurrentSong;
     volume: Volume;
     playbackRate: number;
+    crossfadeDuration: number;
   }
 
   type EqualizerBandFilters =
