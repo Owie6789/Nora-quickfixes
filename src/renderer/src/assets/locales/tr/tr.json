@@ -364,6 +364,7 @@
 		"setCustomLocation": "Özel Konum Ayarla",
 		"equalizer": "Dengeleyici",
 		"reset": "Sıfırla",
+		"keyboardShortcuts": "Keyboard shortcuts",
 		"defaultPage": "Varsayılan Sayfa",
 		"changeDefaultPageDescription": "Uygulamayı açtığınızda görmek istediğiniz varsayılan sayfayı değiştirin.",
 		"preferences": "Tercihler",
@@ -783,6 +784,8 @@
 		"otherShortcuts": "Diğer Kısayollar",
 		"toggleTheme": "Uygulama Temasını Aç/Kapat",
 		"toggleMiniPlayerAlwaysOnTop": "Mini Oynatıcıyı Her Zaman Üstte Aç/Kapat",
+		"toggleEqualizer": "Ekolayzeri aç/kapat",
+		"toggleFullscreenPlayer": "Tam ekran oynatıcıyı aç/kapat",
 		"reload": "Yeniden yükle",
 		"openDevtools": "Devtools'u Aç",
 		"enterKey": "Gir",
@@ -797,6 +800,17 @@
 		"downArrowKey": "Aşağı Ok",
 		"mouseClick": "Fare Tıklaması",
 		"doubleClick": "Çift Tıkla"
+	},
+	"keyboardShortcutsSettings": {
+		"title": "Klavye kısayolları",
+		"description": "Tüm uygulama eylemleri için klavye kısayollarını özelleştirin. Bir kısayolu değiştirmek için yanındaki düzenle düğmesine tıklayın.",
+		"resetToDefaults": "Varsayılana sıfırla",
+		"resetConfirmTitle": "Kısayol sıfırlamayı onayla",
+		"resetConfirmContent": "Tüm kısayolları varsayılan ayarlarına sıfırlamak istediğinizden emin misiniz?",
+		"resetSuccess": "Tüm kısayollar başarıyla sıfırlandı.",
+		"editShortcut": "Kısayolu düzenle",
+		"pressNewShortcut": "Yeni kısayola bas",
+		"duplicateShortcut": "Bu tuş kombinasyonu zaten kullanımda"
 	},
 	"clearLocalStoragePrompt": {
 		"title": "Yerel Depolama Verilerinin Temizlenmesini Onayla",

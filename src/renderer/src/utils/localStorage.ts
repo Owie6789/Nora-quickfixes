@@ -281,17 +281,29 @@ const getSortingStates = <Type extends keyof SortingStates>(type: Type) =>
 // Note: These read/write from the store's initial keyboardShortcuts, not database
 
 const getKeyboardShortcuts = (): ShortcutCategoryList => {
-  const storage = getLocalStorage();
-  return (storage as any)?.keyboardShortcuts || [];
+  const localData = getLocalStorage();
+  const shortcuts = (localData as any)?.keyboardShortcuts || [];
+  const defaults = LOCAL_STORAGE_DEFAULT_TEMPLATE.keyboardShortcuts;
+  return shortcuts.map((category: ShortcutCategory, catIdx: number) => ({
+    ...category,
+    shortcuts: category.shortcuts.map((shortcut: Shortcut, scIdx: number) => {
+      if (shortcut.id) return shortcut;
+      const defaultShortcut = defaults[catIdx]?.shortcuts[scIdx];
+      return {
+        ...shortcut,
+        id: defaultShortcut?.id || `unknown-${catIdx}-${scIdx}`
+      };
+    })
+  }));
 };
 
-const setKeyboardShortcuts = (label: string, newKeys: string[]): void => {
+const setKeyboardShortcuts = (idOrLabel: string, newKeys: string[]): void => {
   const currentData: ShortcutCategoryList = getKeyboardShortcuts();
 
   const updatedData = currentData.map((category) => ({
     ...category,
     shortcuts: category.shortcuts.map((shortcut) => {
-      if (shortcut.label === label) {
+      if (shortcut.id === idOrLabel || shortcut.label === idOrLabel) {
         return { ...shortcut, keys: newKeys };
       }
       return shortcut;
