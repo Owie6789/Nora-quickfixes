@@ -149,6 +149,8 @@
     "zToA": "Z to A",
     "dateAddedAscending": "Oldest",
     "dateAddedDescending": "Newest",
+    "dateModifiedAscending": "Date modified (Oldest)",
+    "dateModifiedDescending": "Date modified (Newest)",
     "releasedYearAscending": "Released year (Ascending)",
     "releasedYearDescending": "Released year (Descending)",
     "allTimeMostListened": "Most-listened (All time)",

@@ -134,6 +134,8 @@
 		"zToA": "Z'den A'ya",
 		"dateAddedAscending": "En Yeni",
 		"dateAddedDescending": "En eski",
+		"dateModifiedAscending": "Değiştirilme Tarihi (En Eski)",
+		"dateModifiedDescending": "Değiştirilme Tarihi (En Yeni)",
 		"releasedYearAscending": "Yayınlanma Yılı (Artan)",
 		"releasedYearDescending": "Yayın Yılı (Azalan)",
 		"allTimeMostListened": "En Çok Dinlenen (Tüm Zamanlar)",
