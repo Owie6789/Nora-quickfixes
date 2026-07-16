@@ -37,11 +37,13 @@ const deleteSongsFromSystem = async (
   try {
     const res = await removeSongsFromLibrary(absoluteFilePaths, abortSignal);
 
-    if (res?.success) {
-      for (const filePath of absoluteFilePaths) {
-        if (isPermanentDelete) await fs.unlink(filePath);
-        else await shell.trashItem(filePath);
-      }
+    if (!res?.success) {
+      return { success: false, message: 'Failed to remove songs from library.' };
+    }
+
+    for (const filePath of absoluteFilePaths) {
+      if (isPermanentDelete) await fs.unlink(filePath);
+      else await shell.trashItem(filePath);
     }
 
     return {

@@ -35,6 +35,7 @@ const importRequiredData = async (importDir: string) => {
       error,
       importDir
     });
+    throw error;
   }
 };
 const importOptionalData = async (
