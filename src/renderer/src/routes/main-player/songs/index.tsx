@@ -368,7 +368,7 @@ function SongsPage() {
       </div>
       {songData === null && (
         <div className="no-songs-container text-font-color-black dark:text-font-color-white my-[8%] flex h-full w-full flex-col items-center justify-center text-center text-xl">
-          <Img src={NoSongsImage} alt="" className="mb-8 w-60" />
+          <Img src={NoSongsImage} alt="" className="mb-8 w-60 text-font-color-highlight dark:text-dark-font-color-highlight" />
           <span>{t('songsPage.empty')}</span>
           <div className="flex items-center justify-between">
             <Button

@@ -60,16 +60,15 @@ const SearchStartPlaceholder = (props: Props) => {
         <div className="search-start-placeholder active appear-from-bottom relative flex h-full! w-full flex-col items-center justify-center text-center">
           <Img
             src={SearchSomethingImage}
-            className={
-              searchResults?.songs.length === 0 &&
-              searchResults?.artists.length === 0 &&
-              searchResults?.albums.length === 0 &&
-              searchResults?.playlists.length === 0 &&
-              searchResults?.genres.length === 0 &&
-              searchInput.trim() === ''
-                ? 'mb-4 w-60 max-w-full'
+            className={`mb-4 w-60 max-w-full text-font-color-highlight dark:text-dark-font-color-highlight ${  searchResults?.songs.length !== 0 ||
+              searchResults?.artists.length !== 0 ||
+              searchResults?.albums.length !== 0 ||
+              searchResults?.playlists.length !== 0 ||
+              searchResults?.genres.length !== 0 ||
+              searchInput.trim() !== ''
+                ? 'hidden'
                 : ''
-            }
+            }`}
             alt=""
           />
 

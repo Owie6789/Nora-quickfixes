@@ -256,7 +256,7 @@ function PlaylistsPage() {
         )}
         {playlists.length === 0 && (
           <div className="no-playlists-container text-font-color-black dark:text-font-color-white my-[10%] flex h-full w-full flex-col items-center justify-center text-center text-xl">
-            <Img src={NoPlaylistsImage} alt="" className="mb-8 w-60" />
+            <Img src={NoPlaylistsImage} alt="" className="mb-8 w-60 text-font-color-highlight dark:text-dark-font-color-highlight" />
             <span>{t('playlistsPage.empty')}</span>
           </div>
         )}

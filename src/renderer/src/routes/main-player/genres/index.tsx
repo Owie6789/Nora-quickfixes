@@ -169,7 +169,7 @@ function GenresPage() {
         </div>
         {genresData === null && (
           <div className="no-songs-container text-font-color-black dark:text-font-color-white my-[10%] flex h-full w-full flex-col items-center justify-center text-center text-xl">
-            <Img src={NoSongsImage} alt="No songs available." className="mb-8 w-60" />
+            <Img src={NoSongsImage} alt="No songs available." className="mb-8 w-60 text-font-color-highlight dark:text-dark-font-color-highlight" />
             <span>{t('genresPage.empty')}</span>
           </div>
         )}

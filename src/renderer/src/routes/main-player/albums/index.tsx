@@ -173,14 +173,14 @@ function AlbumsPage() {
             <Img
               src={FetchingDataImage}
               alt="No songs available."
-              className="mb-8 w-60"
+              className="mb-8 w-60 text-font-color-highlight dark:text-dark-font-color-highlight"
             />
             <div>We&apos;re already there...</div>
           </div>
         )} */}
         {albumsData && albumsData.length === 0 && (
           <div className="no-songs-container text-font-color-black dark:text-font-color-white my-[10%] flex h-full w-full flex-col items-center justify-center text-center text-xl">
-            <Img src={NoAlbumsImage} alt="No songs available." className="mb-8 w-60" />
+            <Img src={NoAlbumsImage} alt="No songs available." className="mb-8 w-60 text-font-color-highlight dark:text-dark-font-color-highlight" />
             <div>{t('albumsPage.empty')}</div>
           </div>
         )}

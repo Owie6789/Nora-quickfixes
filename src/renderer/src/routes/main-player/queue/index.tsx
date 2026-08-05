@@ -428,7 +428,7 @@ function RouteComponent() {
           </div>
           {currentQueue.length === 0 && (
             <div className="no-songs-container flex h-full w-full flex-col items-center justify-center text-center text-2xl text-[#ccc]">
-              <Img src={NoSongsImage} className="mb-8 w-60" alt="" /> {t('currentQueuePage.empty')}
+              <Img src={NoSongsImage} className="mb-8 w-60 text-font-color-highlight dark:text-dark-font-color-highlight" alt="" /> {t('currentQueuePage.empty')}
             </div>
           )}
         </>
